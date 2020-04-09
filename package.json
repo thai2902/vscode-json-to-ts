@@ -1,9 +1,9 @@
 {
-  "name": "json-to-ts",
+  "name": "thaile-json-to-ts",
   "displayName": "JSON to TS",
   "description": "Convert JSON object to typescript interfaces",
   "version": "1.7.4",
-  "publisher": "MariusAlchimavicius",
+  "publisher": "thaile",
   "icon": "icon.png",
   "engines": {
     "vscode": "^1.38.0"
@@ -59,7 +59,7 @@
   },
   "dependencies": {
     "copy-paste": "^1.3.0",
-    "json-to-ts": "^1.7.0",
+    "json-to-ts": "git+https://git@github.com/thai2902/json-to-ts.git",
     "universal-analytics": "^0.4.20",
     "uuid-by-string": "^3.0.2"
   },
