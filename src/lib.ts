@@ -22,6 +22,8 @@ export function getClipboardText() {
 }
 
 export function handleError(error: Error) {
+  console.trace('>>> Error')
+  console.error(error);
   window.showErrorMessage(error.message);
 }
 

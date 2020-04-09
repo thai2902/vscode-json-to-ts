@@ -2,7 +2,7 @@ import * as path from "path";
 import * as os from "os";
 import * as fs from "fs";
 import { Uri, ExtensionContext, commands } from "vscode";
-import JsonToTS from "json-to-ts";
+import JsonToTS from "json-to-ts/dist/src";
 import {
   handleError,
   getClipboardText,
@@ -31,9 +31,9 @@ export function activate(context: ExtensionContext) {
 function transformFromSelection() {
   const tmpFilePath = path.join(os.tmpdir(), "json-to-ts.ts");
   const tmpFileUri = Uri.file(tmpFilePath);
-
+  console.log('>>> JSON to TS: From File', tmpFilePath);
   getSelectedText()
-    .then(logEvent(visitor, "Selection"))
+    // .then(logEvent(visitor, "Selection"))
     .then(validateLength)
     .then(parseJson)
     .then(json => {
@@ -49,8 +49,10 @@ function transformFromSelection() {
 }
 
 function transformFromClipboard() {
+  console.log('>>> JSON to TS: Clipboard');
+  
   getClipboardText()
-    .then(logEvent(visitor, "Clipboard"))
+    // .then(logEvent(visitor, "Clipboard"))
     .then(validateLength)
     .then(parseJson)
     .then(json => {
